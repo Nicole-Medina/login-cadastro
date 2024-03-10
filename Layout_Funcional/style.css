@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
+
+@font-face {
+    font-family: 'MinhaFonteLocal';
+    src: url('caminho/para/minha-fonte.ttf') format('truetype'); /* Substitua pelo caminho real e formato da sua fonte */
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+/* -------------------------
+|      CONFIG LAYOUT       |
+------------------------- */
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;   /*  Aqui ele distribui as div's de cima para baixo  */
+    background: #0b1230;
+    font-family: 'Micro 5', serif;
+    min-height: 100%;   /* altura */
+    margin: 10%;
+    margin-top: 8%;
+}
+
+
+
+
+
+/* -------------------------
+|      LAYOUT CENTRAL      |
+------------------------- */
+.container{
+    position: relative;
+    width: 768px;                  /*  largura do container  */
+    max-width: 100%;
+    min-height: 480px;
+    background: #fdfdfd;
+    border-radius: 10px;         /*  arredondamento de bordas  */
+    overflow: hidden;             /*  como o conteúdo é mostrado na tela. No caso o que sair de .container será cortado  */
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+                0 10px 10px rgba(0,0,0,0.22);
+}
+
+.cadastrar, .entrar{     /*estes são os formulários, de cadastro e login*/
+    position: absolute;
+    top: 0;
+    left: 0;     /* margem à esquerda */
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+
+
+
+/* -------------------------
+|   DISTRIBUINDO CAMADAS   |
+------------------------- */
+.cadastrar{
+    width: 50%;     /*largura*/
+    opacity: 0;    /* me atentar para inverter essa opacidade em relação a .entrar */
+    z-index: 1;   /*  propriedade de Ordem de empilhamento, o que fica em cima e embaixo  */
+}
+
+.entrar{
+    width: 50%;
+    z-index: 2;   /*  propriedade de Ordem de empilhamento, o que fica em cima e embaixo  */
+}
+
+
+/* -------------------------
+|       FORMULÁRIOS        |
+------------------------- */
+form{
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /*  Aqui ele distribui as forms de cima para baixo  */
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
+
+p{
+    font-size: 35px;
+    font-weight: 100;  /* "peso"? */
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 15px 0 20px;
+}
+
+input{
+    background: #c5c2c2;
+    padding: 12px 15px;
+    margin: 8px 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+button{
+    color: #7e7b7b;  /* cor do letreiro */
+    background: #c5c2c2; /* a diferença é que sem o sufixo "-color", eu tenho liberdade de usar pnj, jpg, gradientes.. */
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 55px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 1px solid #c5c2c2;
+    outline: none;    /* remove aquele "linha" que fica em links por exemplo, ou seja, remove bordas 'não solicitadas' */
+    letter-spacing: 1px;
+    text-transform: uppercase;  /* deixa as letras em maiúscula */
+    transition: transform 80ms ease-in-out ;   /*  essa linha está estranha, "transform" parece não estar sendo reconhecido  */
+    cursor: pointer; /* quando o cursor clica, o objeto interage, e em button:active é declarada a ação */
+}
+
+button:active{
+    transform: scale(0.90);  /* a escala do botão diminui em 0.90 */
+}
+
+a {
+    font-family: sans-serif;
+    color: #7e7b7b;
+    background: #c5c2c2;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 55px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 1px solid #c5c2c2;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in-out ;
+    cursor: pointer;
+}
+
+a:active{
+    transform: scale(0.90);  /* a escala do botão diminui em 0.90 */
+}
+
+
+/* -------------------------
+|     ESTUDAR FUNÇÕES      | 
+------------------------- */
+#login, #registro{
+    background-color: #fdfdfd;
+    border: 2px solid #fdfdfd;
+}
+
+/* -------------------------
+|   EFEITO SOBREPOSIÇÕES   |
+------------------------- */
+.aba_cadastro{
+    position: absolute;
+    top: 0; /*  observar se não terão o erro do "topo" novamente  */
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+}
+
+
+/* -------------------------
+|    BLOCO SOBREPOSIÇÃO    |
+------------------------- */
+.aba_taverna{
+    position: relative;
+    background: linear-gradient(to right, #3d1977, #2b6adf);
+    color: #fdfdfd;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+}
+
+.aba {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0; 
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.aba {  /* esse trecho faz surgir o "visite a taverna" */
+    right: 0;
+    transform: translateX(0);
+}
