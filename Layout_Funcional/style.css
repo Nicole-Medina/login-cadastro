@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
 
 @font-face {
-    font-family: 'MinhaFonteLocal';
-    src: url('caminho/para/minha-fonte.ttf') format('truetype'); /* Substitua pelo caminho real e formato da sua fonte */
+    font-family: 'Mona-Sans-Regular';
+    src: url('/Layout_Funcional/Mona-Sans-Regular.ttf') format('truetype'); /* Substitua pelo caminho real e formato da sua fonte */
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Pixelatus';
+    src: url('/Layout_Funcional/Pixelatus.ttf') format('truetype'); /* Substitua pelo caminho real e formato da sua fonte */
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 *{
     box-sizing: border-box;
@@ -22,7 +30,6 @@ body{
     justify-content: center;
     flex-direction: column;   /*  Aqui ele distribui as div's de cima para baixo  */
     background: #0b1230;
-    font-family: 'Micro 5', serif;
     min-height: 100%;   /* altura */
     margin: 10%;
     margin-top: 8%;
@@ -88,23 +95,29 @@ form{
 }
 
 h1{
-    font-size: 50px;
+    font-family: 'Micro 5', serif;
+    font-size: 75px;
+    text-align: center;
     font-weight: bold;
     margin: 0;
 }
 
 p{
-    font-size: 35px;
-    font-weight: 100;  /* "peso"? */
-    line-height: 20px;
+    font-family: 'Mona-Sans-Regular';
+    font-size: 17px;
+    font-weight: bold;  /* "peso"? */
+    text-align: justify;
+    line-height: 30px;
     letter-spacing: 0.5px;
     margin: 15px 0 20px;
 }
 
 input{
+    font-family: 'Mona-Sans-Regular';
+    font-size: 15px;
     background: #c5c2c2;
-    padding: 12px 15px;
-    margin: 8px 15px;
+    padding: 10px 15px;
+    margin: 10px 20px;
     width: 100%;
     border-radius: 5px;
     border: none;
@@ -112,19 +125,21 @@ input{
 }
 
 button{
-    color: #7e7b7b;  /* cor do letreiro */
-    background: #c5c2c2; /* a diferença é que sem o sufixo "-color", eu tenho liberdade de usar pnj, jpg, gradientes.. */
-    font-size: 12px;
-    font-weight: bold;
+    color: #ffffff;  /* cor do letreiro */
+    background: linear-gradient(to right, #4559c9, #2b6adf); /* a diferença é que sem o sufixo "-color", eu tenho liberdade de usar pnj, jpg, gradientes.. */
+    font-size: 10px;
     padding: 12px 55px;
     margin: 20px;
     border-radius: 20px;
-    border: 1px solid #c5c2c2;
     outline: none;    /* remove aquele "linha" que fica em links por exemplo, ou seja, remove bordas 'não solicitadas' */
     letter-spacing: 1px;
     text-transform: uppercase;  /* deixa as letras em maiúscula */
-    transition: transform 80ms ease-in-out ;   /*  essa linha está estranha, "transform" parece não estar sendo reconhecido  */
     cursor: pointer; /* quando o cursor clica, o objeto interage, e em button:active é declarada a ação */
+}
+
+button#explore {
+    font-family: 'Mona-Sans-Regular';
+    font-weight: bold;
 }
 
 button:active{
@@ -132,10 +147,10 @@ button:active{
 }
 
 a {
-    font-family: sans-serif;
-    color: #7e7b7b;
-    background: #c5c2c2;
-    font-size: 12px;
+    font-family: 'Mona-Sans-Regular';
+    color: #2b6adf;
+    background: #ffffff;
+    font-size: 10px;
     font-weight: bold;
     padding: 12px 55px;
     margin: 20px;
@@ -144,7 +159,6 @@ a {
     text-decoration: none;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: transform 80ms ease-in-out ;
     cursor: pointer;
 }
 
