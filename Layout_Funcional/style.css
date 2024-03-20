@@ -1,19 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
-
-@font-face {
-    font-family: 'Mona-Sans-Regular';
-    src: url('/Layout_Funcional/Mona-Sans-Regular.ttf') format('truetype'); /* Substitua pelo caminho real e formato da sua fonte */
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap');
 
 @font-face {
     font-family: 'Pixelatus';
-    src: url('/Layout_Funcional/Pixelatus.ttf') format('truetype'); /* Substitua pelo caminho real e formato da sua fonte */
+    src: url('/Layout_Funcional/Font/Pixelatus.ttf') format('truetype'); /* Substitua pelo caminho real e formato da sua fonte */
     font-weight: normal;
     font-style: normal;
 }
-
 
 *{
     box-sizing: border-box;
@@ -21,13 +13,10 @@
 
 
 
-/* -------------------------
-|      CONFIG LAYOUT       |
-------------------------- */
 body{
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;   /*  Aqui ele distribui as div's de cima para baixo  */
     background: #0b1230;
     min-height: 100%;   /* altura */
@@ -45,8 +34,8 @@ body{
 .container{
     position: relative;
     width: 768px;                  /*  largura do container  */
-    max-width: 100%;
     min-height: 480px;
+    display: flex;
     background: #fdfdfd;
     border-radius: 10px;         /*  arredondamento de bordas  */
     overflow: hidden;             /*  como o conteúdo é mostrado na tela. No caso o que sair de .container será cortado  */
@@ -54,45 +43,71 @@ body{
                 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.cadastrar, .entrar{     /*estes são os formulários, de cadastro e login*/
-    position: absolute;
-    top: 0;
-    left: 0;     /* margem à esquerda */
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-}
-
-
 
 
 /* -------------------------
-|   DISTRIBUINDO CAMADAS   |
+|      PAGINA INICIAL      |
 ------------------------- */
-.cadastrar{
-    width: 50%;     /*largura*/
-    opacity: 0;    /* me atentar para inverter essa opacidade em relação a .entrar */
-    z-index: 1;   /*  propriedade de Ordem de empilhamento, o que fica em cima e embaixo  */
+.saudacao{
+    position: relative;
+    margin-top: 130px;
+    width: 400px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(0, 58, 24), #189114);
+    border-radius: 150px 5px 150px 5px;
+    text-align: center;
+    color: #fdfdfd;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 60px;
+    overflow: hidden;
+    z-index: 10;
+    font-family: 'Mona-Sans-Regular';
 }
 
-.entrar{
-    width: 50%;
-    z-index: 2;   /*  propriedade de Ordem de empilhamento, o que fica em cima e embaixo  */
+h2{
+    font-family: 'Pixelatus';
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
+
+.sessao{
+    align-items: flex-start;
+    margin-right: 1250px;
+    margin-top: 0px;
+    width: 180px;
+    height: 44px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0px 15px 15px 0px;
+    font-size: 8px;
+    cursor: pointer;
+    background: #ec597e;
+    border: #bb4160;
+    color: #9b0429;
+    z-index: 9;
+}
+
+.body-initial{
+    margin: 0px;
+    margin-top: 0px;
+}
+
+.sessao:active{
+    opacity: 80%;
+    transform: scale(99%)
+}
+
+
 
 
 /* -------------------------
 |       FORMULÁRIOS        |
 ------------------------- */
-form{
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; /*  Aqui ele distribui as forms de cima para baixo  */
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
-}
 
 h1{
     font-family: 'Micro 5', serif;
@@ -102,23 +117,38 @@ h1{
     margin: 0;
 }
 
+
 p{
-    font-family: 'Mona-Sans-Regular';
+    font-family: 'Belanosima', sans-serif;
     font-size: 17px;
-    font-weight: bold;  /* "peso"? */
-    text-align: justify;
+    font-weight: normal;  /* "peso"? */
     line-height: 30px;
     letter-spacing: 0.5px;
-    margin: 15px 0 20px;
+    padding-bottom: 5%;
+}
+
+#txt_inicial {
+    margin-left: 40px;
+}
+
+#txt_logar {
+    padding-bottom: 10%;
+    text-align: center;
+
+}
+
+#txt_cdstr {
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 input{
-    font-family: 'Mona-Sans-Regular';
+    font-family: 'Belanosima', sans-serif;
     font-size: 15px;
     background: #c5c2c2;
     padding: 10px 15px;
-    margin: 10px 20px;
-    width: 100%;
+    margin: 5px 35px;
+    width: 80%;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -126,11 +156,13 @@ input{
 
 button{
     color: #ffffff;  /* cor do letreiro */
-    background: linear-gradient(to right, #4559c9, #2b6adf); /* a diferença é que sem o sufixo "-color", eu tenho liberdade de usar pnj, jpg, gradientes.. */
+    background: linear-gradient(to right, rgb(0, 58, 24), #189114); /* a diferença é que sem o sufixo "-color", eu tenho liberdade de usar pnj, jpg, gradientes.. */
     font-size: 10px;
     padding: 12px 55px;
-    margin: 20px;
+    align-items: center;
+    margin: 20px 0 2px 55px;
     border-radius: 20px;
+    border: 1px solid #c5c2c2;
     outline: none;    /* remove aquele "linha" que fica em links por exemplo, ou seja, remove bordas 'não solicitadas' */
     letter-spacing: 1px;
     text-transform: uppercase;  /* deixa as letras em maiúscula */
@@ -138,22 +170,25 @@ button{
 }
 
 button#explore {
-    font-family: 'Mona-Sans-Regular';
-    font-weight: bold;
+    font-family: 'Belanosima', sans-serif;
+    font-weight: normal;
 }
 
 button:active{
     transform: scale(0.90);  /* a escala do botão diminui em 0.90 */
 }
 
+#explore {
+    margin-left: 70px;
+}
+
 a {
-    font-family: 'Mona-Sans-Regular';
-    color: #2b6adf;
+    font-family: 'Belanosima', sans-serif;
+    color: rgb(0, 58, 24);
     background: #ffffff;
     font-size: 10px;
-    font-weight: bold;
+    font-weight: normal;
     padding: 12px 55px;
-    margin: 20px;
     border-radius: 20px;
     border: 1px solid #c5c2c2;
     text-decoration: none;
@@ -166,58 +201,50 @@ a:active{
     transform: scale(0.90);  /* a escala do botão diminui em 0.90 */
 }
 
-
-/* -------------------------
-|     ESTUDAR FUNÇÕES      | 
-------------------------- */
-#login, #registro{
-    background-color: #fdfdfd;
-    border: 2px solid #fdfdfd;
+#direc_login {
+    margin: 10%;
 }
+
+#direc_cadastro {
+    margin: 10%;
+}
+
 
 /* -------------------------
 |   EFEITO SOBREPOSIÇÕES   |
 ------------------------- */
-.aba_cadastro{
-    position: absolute;
-    top: 0; /*  observar se não terão o erro do "topo" novamente  */
-    left: 50%;
+.aba_direcionar{
+    position: relative;
     width: 50%;
+    min-height: 480px;
     height: 100%;
     overflow: hidden;
     z-index: 100;
-}
-
-
-/* -------------------------
-|    BLOCO SOBREPOSIÇÃO    |
-------------------------- */
-.aba_taverna{
-    position: relative;
-    background: linear-gradient(to right, #3d1977, #2b6adf);
+    flex-direction: row;
+    background: linear-gradient(to right, rgb(0, 58, 24), #189114); /* #3d1977, #2b6adf */
     color: #fdfdfd;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-}
-
-.aba {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
+    padding: 5% 5% 0 5%;
     text-align: center;
-    top: 0; 
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
 }
 
-.aba {  /* esse trecho faz surgir o "visite a taverna" */
-    right: 0;
-    transform: translateX(0);
+.aba_login {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    min-height: 480px;
+    overflow: hidden;
+    z-index: 100;
+    padding: 8% 5% 5% 5%;
+    align-items: center;
+}
+
+.aba_cadastro {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    min-height: 480px;
+    overflow: hidden;
+    z-index: 100;
+    padding: 4% 5% 0% 5%;
+    align-items: center;
 }
