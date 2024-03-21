@@ -129,6 +129,8 @@ p{
 
 #txt_inicial {
     margin-left: 40px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
 }
 
 #txt_logar {
@@ -138,8 +140,10 @@ p{
 }
 
 #txt_cdstr {
-    margin-bottom: 10px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
     text-align: center;
+
 }
 
 input{
@@ -160,7 +164,6 @@ button{
     font-size: 10px;
     padding: 12px 55px;
     align-items: center;
-    margin: 20px 0 2px 55px;
     border-radius: 20px;
     border: 1px solid #c5c2c2;
     outline: none;    /* remove aquele "linha" que fica em links por exemplo, ou seja, remove bordas 'não solicitadas' */
@@ -169,7 +172,7 @@ button{
     cursor: pointer; /* quando o cursor clica, o objeto interage, e em button:active é declarada a ação */
 }
 
-button#explore {
+button#explore,#associate {
     font-family: 'Belanosima', sans-serif;
     font-weight: normal;
 }
@@ -178,9 +181,12 @@ button:active{
     transform: scale(0.90);  /* a escala do botão diminui em 0.90 */
 }
 
-#explore {
+#explore, #associate {
     margin-left: 70px;
+    margin-top: 20px;
+    margin-bottom: 2px;
 }
+
 
 a {
     font-family: 'Belanosima', sans-serif;
@@ -247,4 +253,22 @@ a:active{
     z-index: 100;
     padding: 4% 5% 0% 5%;
     align-items: center;
+}
+form{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.notice {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 15px;
+    color: red;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.test{
+    display: block;
+    margin-left: 40px;
+    height: 20px;
+    font-weight: 100;
 }

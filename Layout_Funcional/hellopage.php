@@ -1,9 +1,15 @@
 <?php
 session_start();
 
+// Aqui é verificado se o login foi realizado
+if (!isset($_SESSION["email"]) || empty($_SESSION["email"])) {
+    // Se não estiver autenticado/logado, redireciona para a página de login
+    header("Location: index.php");
+    exit();
+}
+
 $nome = $_SESSION["username"];
 //limitar a um máximo de 12 caracteres
-
 ?>
 
 <!DOCTYPE html!>
@@ -17,7 +23,7 @@ $nome = $_SESSION["username"];
     <body class="body-initial">
     
     <form method="post" action="index.php">
-        <button class="sessao">✖ Encerrar sessão ✖ </button>
+        <button class="sessao"> ✖ Encerrar sessão ✖ </button>
         <input type="text" style="visibility: hidden" name="logout" value="1">
     </form>
         
