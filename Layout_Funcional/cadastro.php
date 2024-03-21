@@ -26,8 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Obter o resultado da consulta
     $result = mysqli_stmt_get_result($stmt);
+    if (strlen($password) < 8 ){ //strlen() converte o objeto(var) em string
+        $notice = "Senha mínima de 8 caracteres.";
+        $flag = 0;
 
-    if ($result && mysqli_num_rows($result) > 0) {
+    } elseif ($result && mysqli_num_rows($result) > 0) {
         $notice = "Este usuário já existe!";
         $flag = 0;
     }else{
@@ -70,7 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p id="txt_cdstr">Desafie o destino, forje sua história!</p>
 
                 <div class="test">
-                    <p class="notice" style="<?php if($flag == 1): echo "color: green"?><?php endif;?>"> <?php echo $notice; ?> </p>
+                    <p class="notice" style="<?php if($flag == 1): echo "color: green"?><?php endif;?>">
+                    <?php echo $notice; ?> </p>
                 </div>
 
                 <form action="cadastro.php" method="post">
