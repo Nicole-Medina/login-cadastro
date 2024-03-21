@@ -1,8 +1,11 @@
 <?php
+session_start();
 
-$nome = 'Nicole';
+$nome = $_SESSION["username"];
+//limitar a um máximo de 12 caracteres
 
 ?>
+
 <!DOCTYPE html!>
 <html lang="en">
     <head>
@@ -12,8 +15,11 @@ $nome = 'Nicole';
     <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body class="body-initial">
-        
-    <button class="sessao"> ✖ Encerrar sessão ✖ </button>
+    
+    <form method="post" action="index.php">
+        <button class="sessao">✖ Encerrar sessão ✖ </button>
+        <input type="text" style="visibility: hidden" name="logout" value="1">
+    </form>
         
         <div class="saudacao">
 
@@ -24,4 +30,5 @@ $nome = 'Nicole';
 
     </body>
 </html>
-<!-- http://localhost/test-derick/Layout_Funcional/hellopage.php -->
+
+<!-- http://localhost/login-cadastro/Layout_Funcional/hellopage.php -->
