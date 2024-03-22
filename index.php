@@ -72,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST["logout"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar</title>
+    <link rel="shortcut icon" type="image/png" href="Parallax/icon_sheet.png">
     <link rel="stylesheet" type="text/css" href="style.css"> 
 </head>
 <body>

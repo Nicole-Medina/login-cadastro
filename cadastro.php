@@ -78,6 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
+    <link rel="shortcut icon" type="image/png" href="Parallax/icon_sheet.png">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -128,14 +129,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Script que realiza o funcionamento do efeito parallax -->
     <script type="text/javascript">
         document.addEventListener("mousemove" , parallax);
+        // quando mousemove ocorre, chama a função parallax
+
         function parallax(e){
             this.querySelectorAll('.layer').forEach(layer => {
+            // seleciona todos .layer e itera sobre cada um com forEach
+
                 const speed = layer.getAttribute('data-speed');
+                // obtém valor dos data-speed, velocidade do efeito
 
                 const x = ( window.innerWidth - e.pageX * speed)/100;
+                // calcula posição horiz. com base no mouse
+
                 const y = ( window.innerHeight - e.pageY * speed)/100;
+                // calcula posição verti. com base no mouse
 
                 layer.style.transform = ` TranslateX( ${x}px ) TranslateY( ${y}px ) `;
+                // aqui é definido a propriedade css transform
             })
         }
     </script>
