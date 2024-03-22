@@ -37,4 +37,4 @@ $nome = $_SESSION["username"];
     </body>
 </html>
 
-<!-- http://localhost/login-cadastro/Layout_Funcional/hellopage.php -->
+<!-- http://localhost/login-cadastro/hellopage.php -->

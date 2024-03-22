@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root"; // Usuário padrão do MySQL no XAMPP
 $password = ""; // Senha padrão do MySQL no XAMPP
-$dbname = "login_system"; // Altere para o nome do seu banco de dados
+$dbname = "login_system";
 
 // Cria a conexão
 $conn = new mysqli($host, $username, $password, $dbname);

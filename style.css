@@ -11,20 +11,46 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #0b1230;
+}
 
-
-body{
+.bloco{
     align-items: center;
     display: flex;
     justify-content: start;
     flex-direction: column;   /*  Aqui ele distribui as div's de cima para baixo  */
-    background: #0b1230;
     min-height: 100%;   /* altura */
-    margin: 10%;
-    margin-top: 8%;
+    margin: 0;
+    margin-top: 200px;
+    padding: 0%;
+    z-index: 80;
 }
 
 
+/* -------------------------
+|         PARALLAX         |
+------------------------- */
+section {
+    position: relative;
+    width: 100%;
+    height: 660px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+}
+section img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    border: 0%;
+}
 
 
 
@@ -50,7 +76,8 @@ body{
 ------------------------- */
 .saudacao{
     position: relative;
-    margin-top: 130px;
+    margin-top: 8%;
+    margin-left: 35%;
     width: 400px;
     min-height: 280px;
     display: flex;
