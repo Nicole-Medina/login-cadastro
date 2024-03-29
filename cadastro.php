@@ -52,6 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $notice = "Nome de usuário indisponível.";
         $flag = 0;
 
+    } elseif (strlen($name) > 12) {
+        $notice = "Nome máximo de 12 caracteres.";
+        $flag = 0;
+
     } elseif ($result && mysqli_num_rows($result) > 0) {
         $notice = "Email indisponível.";
         $flag = 0;

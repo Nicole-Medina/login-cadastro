@@ -2,8 +2,11 @@
 session_start();
 
 // Aqui é verificado se o login foi realizado
-if (!isset($_SESSION["email"]) || empty($_SESSION["email"])) {
-    // Se não estiver autenticado/logado, redireciona para a página de login
+if (!isset($_SESSION["email"]) || empty($_SESSION["email"])) { // isset = is set ("está definido")
+    // Aqui ele confere se: NÃO está definido OU está VAZIO a SESSÃO email, ou seja, verifica se está logado
+    // Se algum deles for verdadeiro:
+
+    // Redireciona para a página de login
     header("Location: index.php");
     exit();
 }
