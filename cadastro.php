@@ -48,12 +48,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $notice = "Senha mínima de 8 caracteres.";
         $flag = 0;
         
-    } elseif (mysqli_num_rows($result_check_username) > 0) {
-        $notice = "Nome de usuário indisponível.";
-        $flag = 0;
-
     } elseif (strlen($name) > 12) {
         $notice = "Nome máximo de 12 caracteres.";
+        $flag = 0;
+
+    } elseif (mysqli_num_rows($result_check_username) > 0) {
+        $notice = "Nome de usuário indisponível.";
         $flag = 0;
 
     } elseif ($result && mysqli_num_rows($result) > 0) {
