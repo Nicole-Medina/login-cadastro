@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST["logout"])) {
                         <p class="notice"> <?php echo $notice; ?> </p>
                         </div>
 
-                        <input type="text" name="email" placeholder="Email" required="">
+                        <input type="email" name="email" placeholder="Email" required="">
                         <input type="password" name="password" placeholder="Senha" required="">
                         <button id="explore">Explorar</button>
                     </form>
@@ -121,16 +121,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST["logout"])) {
         </div>
 
     </section>
+
+    <!-- Script que realiza o funcionamento do efeito parallax -->
     <script type="text/javascript">
         document.addEventListener("mousemove" , parallax);
+        // quando mousemove ocorre, chama a função parallax
+
         function parallax(e){
             this.querySelectorAll('.layer').forEach(layer => {
+            // seleciona todos .layer e itera sobre cada um com forEach
+
                 const speed = layer.getAttribute('data-speed');
+                // obtém valor dos data-speed, velocidade do efeito
 
                 const x = ( window.innerWidth - e.pageX * speed)/100;
+                // calcula posição horiz. com base no mouse
+
                 const y = ( window.innerHeight - e.pageY * speed)/100;
+                // calcula posição verti. com base no mouse
 
                 layer.style.transform = ` TranslateX( ${x}px ) TranslateY( ${y}px ) `;
+                // aqui é definido a propriedade css transform
             })
         }
     </script>
